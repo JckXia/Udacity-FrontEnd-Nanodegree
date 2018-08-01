@@ -1,13 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Route} from 'react-router-dom'
-import './App.css'
 import * as BooksAPI from './BooksAPI'
 import Shelf from './Shelf'
-import SearchBooks from './SearchBooks'
-
-
 import escapeRegExp from 'escape-string-regexp'
+import SearchBooks from './SearchBooks'
+import './App.css'
+
+
 
 class BooksApp extends React.Component {
   state = {
@@ -98,7 +98,7 @@ book.shelf=e.target.value;
   //Idea 1: Get books based on input
   //Idea 2: First, find all the books, then filter them out
   render() {
-
+   var shelfStat=[{title:"Currently Reading",stat:"currentlyReading"},{title:"Want to Read",stat:"wantToRead"},{title:"Read",stat:"read"}];
     return (
 
       <div className="app">
@@ -132,47 +132,30 @@ book.shelf=e.target.value;
       </div>
       )}/>
 
+
     <Route exact path="/" render={()=>(
       <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
         </div>
-
         <div className="list-books-content">
           <div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading</h2>
-              <div className="bookshelf-books">
-                <ol className="books-grid">
-                  <Shelf stat="currentlyReading" books={this.state.books} update={this.ShelfChange}/>
 
-                </ol>
-              </div>
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to Read</h2>
-              <div className="bookshelf-books">
-                <ol className="books-grid">
+   {shelfStat.map((state)=>{
+      return (
+        <div className="bookshelf">
+          <h2 className="bookshelf-title">{state.title}</h2>
+          <div className="bookshelf-books">
+            <ol className="books-grid">
+              <Shelf stat={state.stat} books={this.state.books} update={this.ShelfChange}/>
 
-                 <Shelf stat="wantToRead" books={this.state.books} update={this.ShelfChange}/>
-                </ol>
-              </div>
-            </div>
-
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Read</h2>
-              <div className="bookshelf-books">
-                <ol className="books-grid">
-
-                    <Shelf stat="read" books={this.state.books} update={this.ShelfChange}/>
-
-
-                </ol>
-              </div>
-            </div>
+            </ol>
           </div>
         </div>
-
+      )
+   })}
+          </div>
+        </div>
         <div className="open-search">
           <Link
              to="/search">Add a Book</Link>
