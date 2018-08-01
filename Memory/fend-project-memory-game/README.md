@@ -4,7 +4,7 @@
 
 * [Set up](#Set_Up)
 * [Rules](#Rules)
-* [Library/Depend.] (#Libraries/Dependencies)
+* [Library/Depend] (#Libraries/Dependencies)
 ## Set_Up
  To play the game, Users need to clone this project from the repository then load index into the server
 ## Rules:
