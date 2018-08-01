@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-* [Set up](#Set up)
+* [Set up](#Set_Up)
 * [Rules](#Rules)
 
-## Set Up
+## Set_Up
  To play the game, Users need to clone this project from the repository then load index into the server
 ## Rules:
 The udacity memory game is started, everytime the player clicks on any of the faced-down cards. To win,
