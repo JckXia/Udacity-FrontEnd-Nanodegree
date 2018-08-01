@@ -2,14 +2,12 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+* [Set up](#Set up)
+* [Rules](#Rules)
 
-## Instructions
-
-Udacity memory game
-## Contributing
-
+## Set Up
+ To play the game, Users need to clone this project from the repository then load index into the server
+## Rules:
 The udacity memory game is started, everytime the player clicks on any of the faced-down cards. To win,
 one would need to find all 8 matched pairs. Player's performance will be rated as stars. The game play duration will also be displayed onUdacity memory game
 
