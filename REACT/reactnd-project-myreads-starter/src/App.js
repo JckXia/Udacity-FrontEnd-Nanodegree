@@ -70,8 +70,17 @@ book.shelf=e.target.value;
 
   BooksAPI.update(book,e.target.value);
 
+  }
 
+  FetchShelf=(book)=>{
+    var collection=this.state.books;
 
+   for(var i=0;i<collection.length;i++){
+       if(collection[i].id==book.id){
+         return collection[i].shelf;
+       }
+   }
+   return "none"
   }
 
   updateQuery=(query)=>{
@@ -117,7 +126,7 @@ book.shelf=e.target.value;
         <div className="search-books-results">
 
             <ol className="books-grid">
-          <SearchBooks search={this.state.search} update={this.AddBook}/>
+          <SearchBooks shelf={this.FetchShelf} search={this.state.search} update={this.AddBook}/>
            </ol>
         </div>
       </div>

@@ -13,7 +13,7 @@ class SearchBooks extends React.Component{
 
                <div className="book-cover" style={{ width: 128, height: 188, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}></div>
                <div className="book-shelf-changer">
-                 <select onChange={(e)=>this.props.update(e,book)}>
+                 <select value={this.props.shelf(book)} onChange={(e)=>this.props.update(e,book)}>
                    <option value="move" disabled>Move to...</option>
 
 
