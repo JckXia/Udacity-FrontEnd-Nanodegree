@@ -13,4 +13,4 @@ one would need to find all 8 matched pairs. Player's performance will be rated a
 ## Libraries/Dependencies
  - Jquery
  - Sweetalert 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+ 
